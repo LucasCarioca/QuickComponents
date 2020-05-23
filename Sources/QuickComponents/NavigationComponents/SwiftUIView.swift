@@ -62,7 +62,7 @@ public struct SwitcherView: View {
                 ForEach(pages.indices){ i in
                     Text(self.pages[i].label).tag(i)
                 }
-                }.pickerStyle(SegmentedPickerStyle()).padding()
+                }.pickerStyle(SegmentedPickerStyle())
             self.pages[pickerSelectedItem].view
         }
     }
