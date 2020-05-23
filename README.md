@@ -22,5 +22,5 @@ import the package in the file you would like to use it: `import QuickComponents
 
 ### Documentation
 
-You can find our documentation here: [Docs](docs/Home.md)
+You can find our documentation here: [Docs](https://quickcomponents.lucasdesouza.net)
 
