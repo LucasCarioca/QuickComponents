@@ -50,7 +50,7 @@ public struct SwitcherView: View {
     var pages: [SwitcherPage]
     
     /// - Parameter pages: `[SwitcherPage]` lists the pages to include in the switcher
-    init(pages: [SwitcherPage]) {
+    public init(pages: [SwitcherPage]) {
         self.pages = pages
     }
     
