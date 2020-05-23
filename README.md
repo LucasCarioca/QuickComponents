@@ -9,7 +9,7 @@ Contributions are welcome
 
 **Requirements:**
 - iOS 13 
-- Xcode 11
+- Xcode 11.4
 
 **Installation:**
 - Open Xcode Project
