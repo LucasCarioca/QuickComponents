@@ -24,3 +24,14 @@ import the package in the file you would like to use it: `import QuickComponents
 
 You can find our documentation here: [Docs](https://quickcomponents.lucasdesouza.net)
 
+### Component Examples
+
+[**SwitcherView**](https://quickcomponents.lucasdesouza.net/switcherview/)
+```swift
+SwitcherView(pages: [
+    SwitcherPage(label: "One", view: Text("Hello World!")),
+    SwitcherPage(label: "Two", view: Text("GoodBye World!"))
+])
+```
+![SwitcherView gif](assets/switcherView.gif)
+
