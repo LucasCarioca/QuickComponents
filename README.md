@@ -33,7 +33,7 @@ SwitcherView(pages: [
     SwitcherPage(label: "Two", view: Text("GoodBye World!"))
 ])
 ```
-![SwitcherView gif](assets/switcherView.gif)
+<img src="assets/switcherView.gif" width="300"/>
 
 [**BarView**](https://quickcomponents.lucasdesouza.net/barview/)
 ```swift
@@ -54,5 +54,5 @@ struct ProgressView: View {
 ProgressView()
 ```
 
-![BarView](assets/barView.gif)
+<img src="assets/barView.gif" width="300"/>
 
