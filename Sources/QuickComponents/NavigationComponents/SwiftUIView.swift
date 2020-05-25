@@ -23,8 +23,8 @@ public struct SwitcherPage {
     var view: AnyView
     
     /// - Parameters:
-    ///   - label: `String` for page in switcher button title
-    ///   - view: `View` to display when page is selected
+    ///   - label: **String** for page in switcher button title
+    ///   - view: **View** to display when page is selected
     public init<V>(label: String, view: V) where V : View {
         self.label = label
         self.view = AnyView(view)
@@ -49,13 +49,14 @@ public struct SwitcherView: View {
     
     var pages: [SwitcherPage]
     
-    /// - Parameter pages: `[SwitcherPage]` lists the pages to include in the switcher
+    /// - Parameter pages: **[SwitcherPage]** lists the pages to include in the switcher
     public init(pages: [SwitcherPage]) {
         self.pages = pages
     }
     
     @State var pickerSelectedItem = 0
     
+    /// Builds the swtcher that can toggle between the proviced views
     public var body: some View {
         VStack{
             Picker(selection: $pickerSelectedItem, label: Text("")) {

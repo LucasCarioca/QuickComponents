@@ -35,3 +35,24 @@ SwitcherView(pages: [
 ```
 ![SwitcherView gif](assets/switcherView.gif)
 
+[**BarView**](https://quickcomponents.lucasdesouza.net/barview/)
+```swift
+struct ProgressView: View {
+    @State var timePublisher = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    @State var counter: CGFloat = 0
+    var body: some View{
+        BarView(value: self.counter, max: 5).onReceive(self.timePublisher) { time in
+            if (self.counter < 5) {
+                self.counter += 1
+            }
+        }
+    }
+}
+
+...
+
+ProgressView()
+```
+
+![BarView](assets/barView.gif)
+
