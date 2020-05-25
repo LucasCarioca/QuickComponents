@@ -6,24 +6,24 @@
 //
 
 import SwiftUI
-
-/// # BarView
-/// Creates a bar that show portion of full or complete. Example use case is a percent complete bar.
-///
-/// **Example progress bar**
-/// ```swift
-/// struct ProgressView: View {
-///     @State var timePublisher = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-///     @State var counter: CGFloat = 0
-///     var body: some View{
-///         BarView(value: self.counter, max: 30).onReceive(self.timePublisher) { time in
-///             if (self.counter < 30) {
-///                 self.counter += 1
-///             }
-///         }
-///     }
-/// }
-/// ```
+/**
+# BarView
+Creates a bar that show portion of full or complete. Example use case is a percent complete bar.
+**Example progress bar**
+```swift
+struct ProgressView: View {
+    @State var timePublisher = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    @State var counter: CGFloat = 0
+    var body: some View{
+        BarView(value: self.counter, max: 30).onReceive(self.timePublisher) { time in
+            if (self.counter < 30) {
+                self.counter += 1
+            }
+        }
+    }
+}
+```
+*/
 public struct BarView: View {
     
     var value: CGFloat
@@ -33,8 +33,8 @@ public struct BarView: View {
     
     /// Sets the bar size and filled in volume.
     /// - Parameters:
-    ///   - value: **CGFloat** FIlled in volume of the bar
-    ///   - max: **CGFload** Max volume of the bar
+    ///   - value: FIlled in volume of the bar
+    ///   - max: Max volume of the bar
     public init(value: CGFloat, max: CGFloat){
         self.value = value
         self.max = max
@@ -42,10 +42,10 @@ public struct BarView: View {
     
     /// Sets the bar size and filled in volume with option label and  custom color.
     /// - Parameters:
-    ///   - value: **CGFloat** FIlled in volume of the bar
-    ///   - max: **CGFload** Max volume of the bar
-    ///   - showLabel: **Bool?** Flag to show the volume of the bar currently filled. Set to nil or false to hide the label
-    ///   - color: **Color?** Color of the filled in bar. Set to nil to use the defaul.
+    ///   - value: FIlled in volume of the bar
+    ///   - max: Max volume of the bar
+    ///   - showLabel: Flag to show the volume of the bar currently filled. Set to nil or false to hide the label
+    ///   - color: Color of the filled in bar. Set to nil to use the defaul.
     public init(value: CGFloat, max: CGFloat, showLabel: Bool?, color: Color?){
         self.value = value
         self.max = max
