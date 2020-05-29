@@ -56,3 +56,65 @@ ProgressView()
 
 <img src="assets/barView.gif" width="300"/>
 
+**Button Styles**
+
+
+Based on Material UI buttons. 
+
+<img src="assets/buttonStyles.png" width="300"/>
+
+[**PrimartButton**](https://quickcomponents.lucasdesouza.net/PrimartButton/)
+```swift
+    Button(action: {}){
+        Text("Primary")
+    }.buttonStyle(PrimaryButton())
+        .frame(width: 100, height: 50)
+
+    Button(action: {}){
+        Text("Primary")
+    }.buttonStyle(PrimaryButton(variant: .outlined))
+        .frame(width: 100, height: 50)
+
+    Button(action: {}){
+        Text("Primary")
+    }.buttonStyle(PrimaryButton(variant: .contained))
+        .frame(width: 100, height: 50)
+```
+
+[**SecondaryButton**](https://quickcomponents.lucasdesouza.net/SecondaryButton/)
+```swift
+    Button(action: {}){
+        Text("Secondary")
+    }.buttonStyle(SecondaryButton())
+        .frame(width: 100, height: 50)
+
+    Button(action: {}){
+        Text("Secondary")
+    }.buttonStyle(SecondaryButton(variant: .outlined))
+        .frame(width: 100, height: 50)
+
+    Button(action: {}){
+        Text("Secondary")
+    }.buttonStyle(SecondaryButton(variant: .contained))
+        .frame(width: 100, height: 50)
+```
+[**DisabledButton**](https://quickcomponents.lucasdesouza.net/DisabledButton/)
+```swift
+    Button(action: {}){
+        Text("Disabled")
+    }.buttonStyle(DisabledButton())
+        .frame(width: 100, height: 50)
+
+    Button(action: {}){
+        Text("Disabled")
+    }.buttonStyle(DisabledButton(variant: .outlined))
+        .frame(width: 100, height: 50)
+
+    Button(action: {}){
+        Text("Disabled")
+    }.buttonStyle(DisabledButton(variant: .contained))
+        .frame(width: 100, height: 50)
+```
+
+
+
