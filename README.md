@@ -62,6 +62,7 @@ ProgressView()
 Based on Material UI buttons. 
 
 <img src="assets/buttonStyles.png" width="300"/>
+<img src="assets/buttonStylesDark.png" width="300"/>
 
 [**PrimartButton**](https://quickcomponents.lucasdesouza.net/PrimartButton/)
 ```swift
