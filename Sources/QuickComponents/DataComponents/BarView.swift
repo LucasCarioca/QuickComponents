@@ -8,21 +8,7 @@
 import SwiftUI
 /**
 # BarView
-Creates a bar that show portion of full or complete. Example use case is a percent complete bar.
-**Example progress bar**
-```swift
-struct ProgressView: View {
-    @State var timePublisher = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-    @State var counter: CGFloat = 0
-    var body: some View{
-        BarView(value: self.counter, max: 30).onReceive(self.timePublisher) { time in
-            if (self.counter < 30) {
-                self.counter += 1
-            }
-        }
-    }
-}
-```
+Creates a bar that show portion of full or complete. Example use case:  progress bar.
 */
 public struct BarView: View {
     
@@ -62,8 +48,8 @@ public struct BarView: View {
         
         GeometryReader { geometry in
             ZStack (alignment: .leading) {
-                Capsule().frame(width: geometry.size.width, height: 40).foregroundColor(Color(#colorLiteral(red: 0.8444244862, green: 0.8742135763, blue: 0.8439202309, alpha: 1))).shadow(radius: 5)
-                Capsule().frame(width: self.calcWidth(value: self.value, max: self.max, barWidth: geometry.size.width), height: 30).foregroundColor(self.color).padding(5).shadow(radius: 5)
+                Capsule().frame(width: geometry.size.width, height: 40).foregroundColor(Color.offWhite).shadow(color: Color.black.opacity(0.2), radius: 10, x: 10, y: 10)
+                Capsule().frame(width: self.calcWidth(value: self.value, max: self.max, barWidth: geometry.size.width), height: 30).foregroundColor(self.color).padding(5).shadow(color: Color.black.opacity(0.2), radius: 10, x: 10, y: 10)
                 if self.showLabel {
                     Text(String(format: "%.2f", self.value)).padding()
                 }
@@ -76,42 +62,32 @@ public struct BarView: View {
 }
 
 #if DEBUG
-private struct ProgressView: View {
-    @State var timePublisher = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-    @State var counter: CGFloat = 0
-    var body: some View{
-        BarView(value: self.counter, max: 5).onReceive(self.timePublisher) { time in
-            if (self.counter < 5) {
-                self.counter += 1
+struct BarView_Previews_neumorphism: PreviewProvider {
+    
+    static var previews: some View {
+        ZStack {
+            Color.offWhite.edgesIgnoringSafeArea(.all)
+            VStack {
+                BarView(value: 22, max: 30)
+                BarView(value: 30, max: 30)
+                BarView(value: 22, max: 30, showLabel: nil, color: .green)
+                BarView(value: 22, max: 30, showLabel: true, color: nil)
+                BarView(value: 22, max: 30, showLabel: true, color: .red)
             }
         }
     }
 }
 
-
 struct BarView_Previews: PreviewProvider {
     
     static var previews: some View {
-        Group{
-            Group {
-                ProgressView()
-            }
-            Group {
-                BarView(value: 22, max: 30)
-            }
-            Group {
-                BarView(value: 30, max: 30)
-            }
-            Group {
-                BarView(value: 22, max: 30, showLabel: nil, color: .orange)
-            }
-            Group {
-                BarView(value: 22, max: 30, showLabel: true, color: nil)
-            }
-            Group {
-                BarView(value: 22, max: 30, showLabel: true, color: .red)
-            }
-        }
+        VStack {
+            BarView(value: 22, max: 30)
+            BarView(value: 30, max: 30)
+            BarView(value: 22, max: 30, showLabel: nil, color: .green)
+            BarView(value: 22, max: 30, showLabel: true, color: nil)
+            BarView(value: 22, max: 30, showLabel: true, color: .red)
+        }.darkModeFix()
     }
 }
 #endif

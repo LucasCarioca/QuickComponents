@@ -37,24 +37,25 @@ SwitcherView(pages: [
 
 [**BarView**](https://quickcomponents.lucasdesouza.net/barview/)
 ```swift
-struct ProgressView: View {
-    @State var timePublisher = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-    @State var counter: CGFloat = 0
-    var body: some View{
-        BarView(value: self.counter, max: 5).onReceive(self.timePublisher) { time in
-            if (self.counter < 5) {
-                self.counter += 1
-            }
-        }
-    }
+VStack {
+    BarView(value: 22, max: 30)
+    BarView(value: 30, max: 30)
+    BarView(value: 22, max: 30, showLabel: nil, color: .green)
+    BarView(value: 22, max: 30, showLabel: true, color: nil)
+    BarView(value: 22, max: 30, showLabel: true, color: .red)
 }
-
-...
-
-ProgressView()
 ```
 
-<img src="assets/barView.gif" width="300"/>
+For a slight Neumorphic effect use the included offWhie color for the background with a barView. *Note that this will not work well with out of the box darkmode functionality.*
+```swift
+ZStack {
+    Color.offWhite.edgesIgnoringSafeArea(.all)
+    BarView(value: 22, max: 30)
+}
+```
+
+<img src="assets/barView.png" width="300"/>
+<img src="assets/barViewDark.png" width="300"/>
 
 **Button Styles**
 

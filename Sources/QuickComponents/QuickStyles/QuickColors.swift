@@ -70,3 +70,15 @@ public struct QuickColors {
               }
           }
 }
+
+extension Color {
+    static let offWhite = Color(red: 225/255, green: 225/255, blue: 235/255)
+}
+
+#if DEBUG
+struct QuickColors_Previews: PreviewProvider {
+    static var previews: some View {
+        Color.offWhite
+    }
+}
+#endif
