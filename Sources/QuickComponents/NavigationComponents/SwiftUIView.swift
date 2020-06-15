@@ -28,7 +28,6 @@ public struct SwitcherPage {
     public init<V>(label: String, view: V) where V : View {
         self.label = label
         self.view = AnyView(view)
-        
     }
 }
 
@@ -48,10 +47,17 @@ public struct SwitcherPage {
 public struct SwitcherView: View {
     
     var pages: [SwitcherPage]
+    var reverse: Bool
     
     /// - Parameter pages: Lists the pages to include in the switcher
     public init(pages: [SwitcherPage]) {
         self.pages = pages
+        self.reverse = false
+    }
+    
+    public init(reverse: Bool, pages: [SwitcherPage]) {
+        self.pages = pages
+        self.reverse = reverse
     }
     
     @State var pickerSelectedItem = 0
@@ -59,12 +65,17 @@ public struct SwitcherView: View {
     /// Builds the swtcher that can toggle between the proviced views
     public var body: some View {
         VStack{
+            if self.reverse{
+                self.pages[pickerSelectedItem].view
+            }
             Picker(selection: $pickerSelectedItem, label: Text("")) {
                 ForEach(pages.indices){ i in
                     Text(self.pages[i].label).tag(i)
                 }
                 }.pickerStyle(SegmentedPickerStyle())
-            self.pages[pickerSelectedItem].view
+            if !self.reverse{
+                self.pages[pickerSelectedItem].view
+            }
         }
     }
 }
@@ -74,6 +85,16 @@ struct SwiftUIView_Previews: PreviewProvider {
     static var previews: some View {
         
         SwitcherView(pages: [
+            SwitcherPage(label: "One", view: Text("Hello World!")),
+            SwitcherPage(label: "Two", view: Text("GoodBye World!"))
+        ])
+    }
+}
+
+struct SwiftUIView_rev_Previews: PreviewProvider {
+    static var previews: some View {
+        
+        SwitcherView(reverse: true, pages: [
             SwitcherPage(label: "One", view: Text("Hello World!")),
             SwitcherPage(label: "Two", view: Text("GoodBye World!"))
         ])
