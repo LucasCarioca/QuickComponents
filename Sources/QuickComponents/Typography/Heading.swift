@@ -43,6 +43,7 @@ extension View {
     }
 }
 
+#if DEBUG
 struct  Heading_Previews_Align: PreviewProvider {
     static var previews: some View {
         VStack {
@@ -67,3 +68,4 @@ struct  Heading_Previews_Size: PreviewProvider {
         }
     }
 }
+#endif

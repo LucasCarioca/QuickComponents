@@ -43,6 +43,7 @@ extension View {
     }
 }
 
+#if DEBUG
 struct Paragraph_Align_Previews: PreviewProvider {
     static var previews: some View {
         VStack{
@@ -70,4 +71,4 @@ struct Paragraph_Example1_Previews: PreviewProvider {
         }.Paragraph(align: .trailing)
     }
 }
-
+#endif
