@@ -24,7 +24,7 @@ import the package in the file you would like to use it: `import QuickComponents
 
 You can find our documentation here: [Docs](https://quickcomponents.lucasdesouza.net)
 
-### Component Examples
+## Component Examples
 
 [**SwitcherView**](https://quickcomponents.lucasdesouza.net/switcherview/)
 ```swift
@@ -57,8 +57,7 @@ ZStack {
 <img src="assets/barView.png" width="300"/>
 <img src="assets/barViewDark.png" width="300"/>
 
-**Button Styles**
-
+## Button Styles
 
 Based on Material UI buttons. 
 
@@ -117,6 +116,62 @@ Based on Material UI buttons.
     }.buttonStyle(DisabledButton(variant: .contained))
         .frame(width: 100, height: 50)
 ```
+## Typography
+
+### Heading
 
 
+**Sizing**
 
+```swift
+VStack {
+    Text("Heading Sizes").Heading(align:.center)
+    Text("H1").Heading()
+    Text("H2").Heading(size: .H2)
+    Text("H3").Heading(size: .H3)
+    Text("H4").Heading(size: .H4)
+    Text("H5").Heading(size: .H5)
+    Text("H6").Heading(size: .H6)
+}
+```
+
+<img src="assets/headingsize.png" width="300"/>
+
+**Alignment**
+
+```swift
+VStack {
+    Text("Alginment").Heading(align:.center)
+    Text("leading").Heading()
+    Text("center").Heading(align: .center)
+    Text("trailing").Heading(align: .trailing)
+}
+```
+
+<img src="assets/headingalign.png" width="300"/>
+
+### Paragraph
+
+**Sizing**
+
+```swift
+VStack{
+    Text("Lorem ipsum ... semper vitae.").Paragraph(size: .LG)
+    Text("Lorem ipsum ... semper vitae.").Paragraph()
+    Text("Lorem ipsum ... semper vitae.").Paragraph(size:.SM)
+}
+```
+
+<img src="assets/paragraphsize.png" width="300"/>
+
+**Alignment**
+
+```swift
+VStack{
+    Text("Lorem ipsum ... semper vitae.").Paragraph()
+    Text("Lorem ipsum ... semper vitae.").Paragraph(align: .center)
+    Text("Lorem ipsum ... semper vitae.").Paragraph(align: .trailing)
+}
+```
+
+<img src="assets/paragraphalign.png" width="300"/>
