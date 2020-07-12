@@ -118,7 +118,9 @@ Based on Material UI buttons.
 ```
 ## Typography
 
-[### Heading](https://quickcomponents.lucasdesouza.net/heading)
+### Heading
+
+[Heading Docs](https://quickcomponents.lucasdesouza.net/heading)
 
 
 **Sizing**
@@ -150,7 +152,9 @@ VStack {
 
 <img src="assets/headingalign.png" width="300"/>
 
-[### Paragraph](https://quickcomponents.lucasdesouza.net/paragraph)
+### Paragraph
+
+[Paragraph Docs](https://quickcomponents.lucasdesouza.net/paragraph)
 
 **Sizing**
 
