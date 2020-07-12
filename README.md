@@ -39,6 +39,7 @@ SwitcherView(pages: [
 ```swift
 VStack {
     BarView(value: 22, max: 30)
+    BarView(value: 35, max: 30) // Notice that this bar overflows its max. This is why there is a indicator on the bar.
     BarView(value: 30, max: 30)
     BarView(value: 22, max: 30, showLabel: nil, color: .green)
     BarView(value: 22, max: 30, showLabel: true, color: nil)
