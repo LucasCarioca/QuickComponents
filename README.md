@@ -1,4 +1,5 @@
 <img src="assets/banner.png" width="250"/>
+
 *A set of reusable components to speed up developing complex UIs with SwiftUI.*
 
 > ⚠️ **The project is currently in very early stages of development.**
