@@ -180,3 +180,32 @@ VStack{
 ```
 
 <img src="assets/paragraphalign.png" width="300"/>
+
+### List
+
+[**Ordered List**](https://quickcomponents.lucasdesouza.net/OrderedList)
+
+```swift
+OrderedList(items: [
+    "step one",
+    "step two",
+    "step three"
+])
+```
+
+<img src="assets/orderedlist.png" width="300"/>
+
+
+[**Unordered List**](https://quickcomponents.lucasdesouza.net/UnorderedList)
+
+```swift
+UnorderedList(items: [
+    "step one",
+    "step two",
+    "step three"
+])
+```
+
+<img src="assets/unorderedlist.png" width="300"/>
+
+
