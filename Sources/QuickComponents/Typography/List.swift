@@ -7,8 +7,14 @@
 
 import SwiftUI
 
+/// Creates a simple HTML like ordered list
 public struct OrderedList: View {
     var items: [String]
+    /// Creates a simple HTML like ordered list with the privided list of items
+    /// - Parameter items: List of items to be displayed
+    public init(items: [String]){
+        self.items = items
+    }
     public var body: some View {
         VStack{
             ForEach(items.indices) { i in
@@ -18,8 +24,14 @@ public struct OrderedList: View {
     }
 }
 
+/// Creates a simple HTML like unordered list
 public struct UnorderedList: View {
     var items: [String]
+    /// Creates a simple HTML like unordered list with the privided list of items
+    /// - Parameter items: List of items to be displayed
+    public init(items: [String]){
+        self.items = items
+    }
     public var body: some View {
         VStack{
             ForEach(items, id: \.self) { item in

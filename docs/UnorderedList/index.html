@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QuickComponents - DarkView</title>
+    <title>QuickComponents - UnorderedList</title>
     <link rel="stylesheet" type="text/css" href="/all.css" media="all" />
 </head>
 <body>
@@ -26,7 +26,7 @@
     <nav>
         <div class="wrapper">
             <h2>On This Page</h2>
-            <ol><li><a href="#relationships">Relationships</a><ul><li><a href="#relationships">Conforms To</a></li></ul></li><li><a href="#initializers">Initializers</a><ul><li class="initializer"><a href="#darkview.init(_:content:)">init(_:​content:​)</a></li></ul></li><li><a href="#properties">Properties</a><ul><li class="property"><a href="#darkview.darkcontent">dark​Content</a></li><li class="property"><a href="#darkview.on">on</a></li><li class="property"><a href="#darkview.body">body</a></li></ul></li></ol>
+            <ol><li><a href="#relationships">Relationships</a><ul><li><a href="#relationships">Conforms To</a></li></ul></li><li><a href="#initializers">Initializers</a><ul><li class="initializer"><a href="#unorderedlist.init(items:)">init(items:​)</a></li></ul></li><li><a href="#properties">Properties</a><ul><li class="property"><a href="#unorderedlist.items">items</a></li><li class="property"><a href="#unorderedlist.body">body</a></li></ul></li></ol>
         </div>
     </nav>
 
@@ -34,10 +34,14 @@
         <article>
             <h1>
     <small>Structure</small>
-    <code class="name">Dark​View</code>
+    <code class="name">Unordered​List</code>
 </h1>
 
-<html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">struct</span> <span class="type">DarkView</span>&lt;<span class="variable">Content</span>&gt;: <span class="type">View</span> <span class="keyword">where</span> <span class="type">Content</span>: <span class="type">View</span></code></pre></body></html>
+<html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">struct</span> <span class="type">UnorderedList</span>: <span class="type">View</span></code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Creates a simple HTML like unordered list</p>
+
+</div>
 <section id="relationships">
     <h2 hidden>Relationships</h2>
         <figure>
@@ -51,12 +55,12 @@
  viewBox="0.00 0.00 872.00 116.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 112)">
 <polygon fill="white" stroke="transparent" points="-4,4 -4,-112 868,-112 868,4 -4,4"/>
-<!-- DarkView -->
+<!-- UnorderedList -->
 <g id="node1" class="node structure current">
-<title>DarkView</title>
-<g id="a_node1"><a xlink:href="/DarkView" xlink:title="DarkView">
+<title>UnorderedList</title>
+<g id="a_node1"><a xlink:href="/UnorderedList" xlink:title="UnorderedList">
 <path fill="none" stroke="black" stroke-width="3" d="M528,-108C528,-108 336,-108 336,-108 330,-108 324,-102 324,-96 324,-96 324,-84 324,-84 324,-78 330,-72 336,-72 336,-72 528,-72 528,-72 534,-72 540,-78 540,-84 540,-84 540,-96 540,-96 540,-102 534,-108 528,-108"/>
-<text text-anchor="middle" x="432" y="-86.3" font-family="Menlo" font-size="14.00">DarkView</text>
+<text text-anchor="middle" x="432" y="-86.3" font-family="Menlo" font-size="14.00">UnorderedList</text>
 </a>
 </g>
 </g>
@@ -66,9 +70,9 @@
 <path fill="none" stroke="black" d="M528,-36C528,-36 336,-36 336,-36 330,-36 324,-30 324,-24 324,-24 324,-12 324,-12 324,-6 330,0 336,0 336,0 528,0 528,0 534,0 540,-6 540,-12 540,-12 540,-24 540,-24 540,-30 534,-36 528,-36"/>
 <text text-anchor="middle" x="432" y="-14.3" font-family="Menlo" font-size="14.00">View</text>
 </g>
-<!-- DarkView&#45;&gt;View -->
+<!-- UnorderedList&#45;&gt;View -->
 <g id="edge1" class="edge conformsTo">
-<title>DarkView&#45;&gt;View</title>
+<title>UnorderedList&#45;&gt;View</title>
 <path fill="none" stroke="black" d="M432,-71.7C432,-63.98 432,-54.71 432,-46.11"/>
 <polygon fill="black" stroke="black" points="435.5,-46.1 432,-36.1 428.5,-46.1 435.5,-46.1"/>
 </g>
@@ -76,7 +80,7 @@
 </svg>
 
 
-    <figcaption hidden>Inheritance graph for DarkView.</figcaption>
+    <figcaption hidden>Inheritance graph for UnorderedList.</figcaption>
 </figure>
         <h3>Conforms To</h3>
 <dl>
@@ -86,29 +90,48 @@
     <section id="initializers">
         <h2>Initializers</h2>
 
-        <div role="article" class="initializer" id="darkview.init(_:content:)">
+        <div role="article" class="initializer" id="unorderedlist.init(items:)">
     <h3>
-        <code>init(_:​content:​)</code>
+        <code>init(items:​)</code>
     </h3>
-    <html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">init</span>(<span class="keyword">_</span> <span class="variable">on</span>: <span class="type">Bool</span>, <span class="variable">content</span>: () -&gt; <span class="type">Content</span>)</code></pre></body></html>
+    <html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">init</span>(<span class="variable">items</span>: [<span class="type">String</span>])</code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Creates a simple HTML like unordered list with the privided list of items</p>
+
+</div>
+<h4>Parameters</h4>
+
+<table class="parameters">
+  <thead hidden>
+  <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <th>items</th>
+    <td><code class="type">[String]</code></td></td>
+    <td><ul>
+<li>items: List of items to be displayed</li>
+</ul>
+</td>
+</tr>
+  </tbody>
+</table>
 </div>
     </section>
     <section id="properties">
         <h2>Properties</h2>
 
-        <div role="article" class="variable" id="darkview.darkcontent">
+        <div role="article" class="variable" id="unorderedlist.items">
     <h3>
-        <code>dark​Content</code>
+        <code>items</code>
     </h3>
-    <html><body><pre class="highlight"><code><span class="keyword">var</span> <span class="variable">darkContent</span>: <span class="type">Content</span></code></pre></body></html>
+    <html><body><pre class="highlight"><code><span class="keyword">var</span> <span class="variable">items</span>: [<span class="type">String</span>]</code></pre></body></html>
 </div>
-<div role="article" class="variable" id="darkview.on">
-    <h3>
-        <code>on</code>
-    </h3>
-    <html><body><pre class="highlight"><code><span class="keyword">var</span> <span class="variable">on</span>: <span class="type">Bool</span></code></pre></body></html>
-</div>
-<div role="article" class="variable" id="darkview.body">
+<div role="article" class="variable" id="unorderedlist.body">
     <h3>
         <code>body</code>
     </h3>
@@ -123,7 +146,7 @@
 
     <footer>
         <p>
-    Generated on <time datetime="2020-07-13T23:20:14-0500">July 13, 2020</time> using <a href="https://github.com/SwiftDocOrg/swift-doc">swift-doc</a> <span class="version">1.0.0-beta.3</span>.
+    Generated on <time datetime="2020-07-13T23:20:13-0500">July 13, 2020</time> using <a href="https://github.com/SwiftDocOrg/swift-doc">swift-doc</a> <span class="version">1.0.0-beta.3</span>.
 </p>
     </footer>
 </body>
