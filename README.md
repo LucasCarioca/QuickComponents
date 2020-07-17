@@ -56,7 +56,23 @@ ZStack {
 ```
 
 <img src="assets/barView.png" width="300"/>
+
+**Dark mode**
+
 <img src="assets/barViewDark.png" width="300"/>
+
+**Using percentages**
+
+```swift
+VStack {
+    BarView(percent: 25)
+    BarView(percent: 50)
+    BarView(percent: 75)
+    BarView(percent: 100)
+}
+```
+
+<img src="assets/barViewpercentages.png" width="300"/>
 
 ## Button Styles
 

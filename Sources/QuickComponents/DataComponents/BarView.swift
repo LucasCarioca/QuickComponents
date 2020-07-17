@@ -32,6 +32,18 @@ public struct BarView: View {
         self.max = max
     }
     
+    /// Create a barview as a percentage value.
+    /// - Parameter percent: percent of the bar to be filled
+    public init(percent: CGFloat){
+        if percent > 100 {
+            self.value = 100
+            self.overflowWarning = true
+        } else {
+            self.value = percent
+        }
+        self.max = 100
+    }
+    
     /// Sets the bar size and filled in volume with option label and  custom color.
     /// - Parameters:
     ///   - value: FIlled in volume of the bar
@@ -39,8 +51,34 @@ public struct BarView: View {
     ///   - showLabel: Flag to show the volume of the bar currently filled. Set to nil or false to hide the label
     ///   - color: Color of the filled in bar. Set to nil to use the defaul.
     public init(value: CGFloat, max: CGFloat, showLabel: Bool?, color: Color?){
-        self.value = value
+        if value > max {
+            self.value = max
+            self.overflowWarning = true
+        } else {
+            self.value = value
+        }
         self.max = max
+        if let showLabel = showLabel{
+            self.showLabel = showLabel
+        }
+        if let color = color{
+            self.color = color
+        }
+    }
+    
+    /// Create a barview as a percentage value.
+    /// - Parameters:
+    ///   - percent: percent of the bar to be filled
+    ///   - showLabel: Flag to show the volume of the bar currently filled. Set to nil or false to hide the label
+    ///   - color: Color of the filled in bar. Set to nil to use the defaul.
+    public init(percent: CGFloat, showLabel: Bool?, color: Color?){
+        if percent > 100 {
+            self.value = 100
+            self.overflowWarning = true
+        } else {
+            self.value = percent
+        }
+        self.max = 100
         if let showLabel = showLabel{
             self.showLabel = showLabel
         }
@@ -106,6 +144,18 @@ struct BarView_Previews: PreviewProvider {
             BarView(value: 22, max: 30, showLabel: true, color: nil)
             BarView(value: 22, max: 30, showLabel: true, color: .red)
         }.darkModeFix()
+    }
+}
+
+struct BarView_Percentage_Previews: PreviewProvider {
+    
+    static var previews: some View {
+        VStack {
+            BarView(percent: 25)
+            BarView(percent: 50)
+            BarView(percent: 75)
+            BarView(percent: 100)
+        }
     }
 }
 #endif
