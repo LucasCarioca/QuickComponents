@@ -1,3 +1,10 @@
+# [0.6.0](https://github.com/LucasCarioca/QuickComponents/compare/v0.5.1...v0.6.0) (2020-07-17)
+
+
+### Features
+
+* **data:** add percentage interface to bar view ([#15](https://github.com/LucasCarioca/QuickComponents/issues/15)) ([4559970](https://github.com/LucasCarioca/QuickComponents/commit/45599701a3afcd37fea0c51ba9424395492c9c6d))
+
 ## [0.5.1](https://github.com/LucasCarioca/QuickComponents/compare/v0.5.0...v0.5.1) (2020-07-14)
 
 
