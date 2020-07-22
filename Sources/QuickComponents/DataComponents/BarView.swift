@@ -17,6 +17,7 @@ public struct BarView: View {
     var overflowWarning = false
     var showLabel: Bool = false
     var color: Color = Color(#colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1))
+    var label: String = ""
     
     /// Sets the bar size and filled in volume.
     /// - Parameters:
@@ -51,6 +52,10 @@ public struct BarView: View {
     ///   - showLabel: Flag to show the volume of the bar currently filled. Set to nil or false to hide the label
     ///   - color: Color of the filled in bar. Set to nil to use the defaul.
     public init(value: CGFloat, max: CGFloat, showLabel: Bool?, color: Color?){
+        if let showLabel = showLabel{
+            self.showLabel = showLabel
+            self.label = String(format: "%.2f", value)
+        }
         if value > max {
             self.value = max
             self.overflowWarning = true
@@ -58,9 +63,7 @@ public struct BarView: View {
             self.value = value
         }
         self.max = max
-        if let showLabel = showLabel{
-            self.showLabel = showLabel
-        }
+        
         if let color = color{
             self.color = color
         }
@@ -72,15 +75,17 @@ public struct BarView: View {
     ///   - showLabel: Flag to show the volume of the bar currently filled. Set to nil or false to hide the label
     ///   - color: Color of the filled in bar. Set to nil to use the defaul.
     public init(percent: CGFloat, showLabel: Bool?, color: Color?){
-        if percent > 100 {
-            self.value = 100
-            self.overflowWarning = true
-        } else {
-            self.value = percent
-        }
         self.max = 100
+        let value = percent
         if let showLabel = showLabel{
             self.showLabel = showLabel
+            self.label = String(format: "%.0f", value) + "%"
+        }
+        if value > max {
+            self.value = max
+            self.overflowWarning = true
+        } else {
+            self.value = value
         }
         if let color = color{
             self.color = color
@@ -96,7 +101,7 @@ public struct BarView: View {
                 Capsule().frame(width: self.calcWidth(value: self.value, max: self.max, barWidth: geometry.size.width), height: 30).foregroundColor(self.color).padding(5).shadow(color: Color.black.opacity(0.2), radius: 10, x: 10, y: 10)
                 HStack{
                     if self.showLabel {
-                        Text(String(format: "%.2f", self.value)).padding()
+                        Text(self.label).padding()
                     }
                     Spacer()
                     if self.overflowWarning {
@@ -139,6 +144,7 @@ struct BarView_Previews: PreviewProvider {
         VStack {
             BarView(value: 22, max: 30)
             BarView(value: 35, max: 30)
+            BarView(value: 35, max: 30, showLabel: true, color: .green)
             BarView(value: 30, max: 30)
             BarView(value: 22, max: 30, showLabel: nil, color: .green)
             BarView(value: 22, max: 30, showLabel: true, color: nil)
@@ -155,6 +161,7 @@ struct BarView_Percentage_Previews: PreviewProvider {
             BarView(percent: 50)
             BarView(percent: 75)
             BarView(percent: 100)
+            BarView(percent: 150, showLabel: true, color: .green)
         }
     }
 }
