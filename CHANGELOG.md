@@ -1,3 +1,10 @@
+## [0.6.1](https://github.com/LucasCarioca/QuickComponents/compare/v0.6.0...v0.6.1) (2020-07-22)
+
+
+### Bug Fixes
+
+* **barview:** fix the label on overflown values ([40af5fe](https://github.com/LucasCarioca/QuickComponents/commit/40af5fef30581b4ad31cd4030807a6c874bfb19e))
+
 # [0.6.0](https://github.com/LucasCarioca/QuickComponents/compare/v0.5.1...v0.6.0) (2020-07-17)
 
 
