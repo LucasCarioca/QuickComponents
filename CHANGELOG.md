@@ -1,3 +1,10 @@
+# [0.7.0](https://github.com/LucasCarioca/QuickComponents/compare/v0.6.1...v0.7.0) (2020-08-07)
+
+
+### Features
+
+* **navigation:** add tab view ([#20](https://github.com/LucasCarioca/QuickComponents/issues/20)) ([a822be8](https://github.com/LucasCarioca/QuickComponents/commit/a822be8521496dc5fdaa458586579afa67d124d9))
+
 ## [0.6.1](https://github.com/LucasCarioca/QuickComponents/compare/v0.6.0...v0.6.1) (2020-07-22)
 
 
