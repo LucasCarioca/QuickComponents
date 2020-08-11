@@ -112,8 +112,8 @@ public struct BarView: View {
                         
                     }
                 }
-            }
-        }
+            }.padding(.vertical, 5)
+        }.frame(height:50)
     }
     private func calcWidth(value: CGFloat, max: CGFloat, barWidth: CGFloat) -> CGFloat {
         return ((barWidth - 10) * value) / max
