@@ -1,3 +1,10 @@
+## [0.7.2](https://github.com/LucasCarioca/QuickComponents/compare/v0.7.1...v0.7.2) (2020-08-15)
+
+
+### Bug Fixes
+
+* build errors with the tab view ([#22](https://github.com/LucasCarioca/QuickComponents/issues/22)) ([7b0a155](https://github.com/LucasCarioca/QuickComponents/commit/7b0a15575448dfa9cb84fb7278f339ef49ab68bc))
+
 ## [0.7.1](https://github.com/LucasCarioca/QuickComponents/compare/v0.7.0...v0.7.1) (2020-08-11)
 
 
