@@ -37,11 +37,11 @@ struct TabRootView: View {
             ZStack {
                 self.theme.backgroundColor.edgesIgnoringSafeArea(.all)
                 VStack {
-                    tabs[tag].view.frame(width: geometry.size.width, height: geometry.size.height-75, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    self.tabs[self.tag].view.frame(width: geometry.size.width, height: geometry.size.height-75, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     ZStack {
                         HStack {
-                            ForEach(0..<tabs.count) { i in
-                                Image(systemName: tabs[i].image)
+                            ForEach(0..<self.tabs.count) { i in
+                                Image(systemName: self.tabs[i].image)
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .padding(20)
