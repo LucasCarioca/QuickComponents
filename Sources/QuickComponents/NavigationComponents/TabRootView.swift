@@ -23,7 +23,7 @@ public struct TabPage {
 }
 
 /// Creates the root of a tabbed view.
-struct TabRootView: View {
+public struct TabRootView: View {
     @State var tag = 0
     var tabs: [TabPage]
     var theme: TabViewTheme
@@ -32,12 +32,12 @@ struct TabRootView: View {
     /// - Parameters:
     ///   - tabs: Tabs to include in the tabbed view
     ///   - theme: Cusom theme for the tabbed view
-    init(tabs: [TabPage], theme: TabViewTheme = TabViewTheme(backgroundColor: Color.clear, highlightColor: .blue, defaultColor: .gray)) {
+    public init(tabs: [TabPage], theme: TabViewTheme = TabViewTheme(backgroundColor: Color.clear, highlightColor: .blue, defaultColor: .gray)) {
         self.tabs = tabs
         self.theme = theme
     }
     
-    var body: some View {
+    public var body: some View {
         GeometryReader { geometry in
             ZStack {
                 self.theme.backgroundColor.edgesIgnoringSafeArea(.all)
@@ -78,7 +78,7 @@ public class TabViewTheme {
     ///   - backgroundColor: Set the background of the bottom tab bar
     ///   - highlightColor: Set the color for the highlight on the selected tab
     ///   - defaultColor: Set the color for non-selected tabs
-    init(backgroundColor: Color, highlightColor: Color, defaultColor: Color) {
+    public init(backgroundColor: Color, highlightColor: Color, defaultColor: Color) {
         self.backgroundColor = backgroundColor
         self.highlightColor = highlightColor
         self.defaultColor = defaultColor
@@ -89,7 +89,7 @@ public class TabViewTheme {
     ///   - backgroundColor: Set the background of the bottom tab bar
     ///   - highlightColor: Set the color for the highlight on the selected tab
     ///   - defaultColor: Set the color for non-selected tabs
-    init(backgroundColor: UIColor, highlightColor: UIColor, defaultColor: UIColor) {
+    public init(backgroundColor: UIColor, highlightColor: UIColor, defaultColor: UIColor) {
         self.backgroundColor = Color(backgroundColor)
         self.highlightColor = Color(highlightColor)
         self.defaultColor = Color(defaultColor)
@@ -101,7 +101,7 @@ struct TabRootView_Previews: PreviewProvider {
         TabRootView(tabs: [
             TabPage(image: "timer", view: Text("one")),
             TabPage(image: "timer", view: Text("Two")),
-            TabPage(image: "timer", view: Text("Three")),
+            
             
         ])
     }
