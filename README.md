@@ -26,15 +26,6 @@ You can find our documentation here: [Docs](https://quickcomponents.lucasdesouza
 
 ## Component Examples
 
-[**SwitcherView**](https://quickcomponents.lucasdesouza.net/switcherview/)
-```swift
-SwitcherView(pages: [
-    SwitcherPage(label: "One", view: Text("Hello World!")),
-    SwitcherPage(label: "Two", view: Text("GoodBye World!"))
-])
-```
-<img src="assets/switcherView.gif" width="300"/>
-
 [**BarView**](https://quickcomponents.lucasdesouza.net/barview/)
 ```swift
 VStack {
@@ -44,14 +35,6 @@ VStack {
     BarView(value: 22, max: 30, showLabel: nil, color: .green)
     BarView(value: 22, max: 30, showLabel: true, color: nil)
     BarView(value: 22, max: 30, showLabel: true, color: .red)
-}
-```
-
-For a slight Neumorphic effect use the included offWhie color for the background with a barView. *Note that this will not work well with out of the box darkmode functionality.*
-```swift
-ZStack {
-    Color.offWhite.edgesIgnoringSafeArea(.all)
-    BarView(value: 22, max: 30)
 }
 ```
 

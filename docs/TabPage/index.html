@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QuickComponents - SwitcherPage</title>
+    <title>QuickComponents - TabPage</title>
     <link rel="stylesheet" type="text/css" href="/all.css" media="all" />
 </head>
 <body>
@@ -26,7 +26,7 @@
     <nav>
         <div class="wrapper">
             <h2>On This Page</h2>
-            <ol><li><a href="#initializers">Initializers</a><ul><li class="initializer"><a href="#switcherpage.init(label:view:)">init(label:​view:​)</a></li></ul></li></ol>
+            <ol><li><a href="#initializers">Initializers</a><ul><li class="initializer"><a href="#tabpage.init(image:view:)">init(image:​view:​)</a></li></ul></li></ol>
         </div>
     </nav>
 
@@ -34,23 +34,27 @@
         <article>
             <h1>
     <small>Structure</small>
-    <code class="name">Switcher​Page</code>
+    <code class="name">Tab​Page</code>
 </h1>
 
-<html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">struct</span> <span class="type">SwitcherPage</span></code></pre></body></html>
+<html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">struct</span> <span class="type">TabPage</span></code></pre></body></html>
 <div class="summary" role="doc-abstract">
-    <p>Used to define a page for SwitcherView.</p>
+    <p>A TabPage contains both a View and a SF Symbols image name. This is used to create a Tabbed view where the image is the icon for the tab and the view is the content shown when the tab is selected.</p>
 
 </div>
 
     <section id="initializers">
         <h2>Initializers</h2>
 
-        <div role="article" class="initializer" id="switcherpage.init(label:view:)">
+        <div role="article" class="initializer" id="tabpage.init(image:view:)">
     <h3>
-        <code>init(label:​view:​)</code>
+        <code>init(image:​view:​)</code>
     </h3>
-    <html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">init</span>&lt;<span class="variable">V</span>&gt;(<span class="variable">label</span>: <span class="type">String</span>, <span class="variable">view</span>: <span class="type">V</span>) <span class="keyword">where</span> <span class="type">V</span>: <span class="type">View</span></code></pre></body></html>
+    <html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">init</span>&lt;<span class="variable">V</span>&gt;(<span class="variable">image</span>: <span class="type">String</span>, <span class="variable">view</span>: <span class="type">V</span>) <span class="keyword">where</span> <span class="type">V</span>: <span class="type">View</span></code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Cteates TabPage with a SF Symbol image and View.</p>
+
+</div>
 <h4>Parameters</h4>
 
 <table class="parameters">
@@ -63,15 +67,15 @@
   </thead>
   <tbody>
     <tr>
-    <th>label</th>
+    <th>image</th>
     <td><code class="type">String</code></td>
-    <td><p>For page in switcher button title</p>
+    <td><p>SF Symbol name for the image that will appear on the tab</p>
 </td>
 </tr>
 <tr>
     <th>view</th>
     <td><code class="type">V</code></td>
-    <td><p>To display when page is selected</p>
+    <td><p>Content to be shown when the tab is selected</p>
 </td>
 </tr>
   </tbody>

@@ -8,16 +8,8 @@
 import SwiftUI
 
 
-/**
- # SwitcherPage
- 
- Used to define a page for SwitcherView.
- 
- ## Example
- ```swift
- SwitcherPage(label: "One", view: Text("Hello World!")),
- ```
- */
+
+/// Used to define a page for SwitcherView.
 public struct SwitcherPage {
     var label: String
     var view: AnyView
@@ -31,38 +23,24 @@ public struct SwitcherPage {
     }
 }
 
-/**
-# SwitcherView
- 
- Creates a view with buttons to switch between a list of views
- 
- ## Example
- ```swift
- SwitcherView(pages: [
-     SwitcherPage(label: "One", view: Text("Hello World!")),
-     SwitcherPage(label: "Two", view: Text("GoodBye World!"))
- ])
- ```
- */
+
+/// Creates a view with buttons to switch between a list of views
 public struct SwitcherView: View {
     
     var pages: [SwitcherPage]
     var reverse: Bool
     
+    /// Builds the swtcher that can toggle between the proviced views
     /// - Parameter pages: Lists the pages to include in the switcher
-    public init(pages: [SwitcherPage]) {
-        self.pages = pages
-        self.reverse = false
-    }
-    
-    public init(reverse: Bool, pages: [SwitcherPage]) {
+    /// - Parameter reverse: If true the picker will appear below the views
+    public init(reverse: Bool = false, pages: [SwitcherPage]) {
         self.pages = pages
         self.reverse = reverse
     }
+
     
     @State var pickerSelectedItem = 0
     
-    /// Builds the swtcher that can toggle between the proviced views
     public var body: some View {
         VStack{
             if self.reverse{
