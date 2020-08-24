@@ -7,32 +7,37 @@
 
 import SwiftUI
 
+///  A TabPage contains both a View and a SF Symbols image name. This is used to create a Tabbed view where the image is the icon for the tab and the view is the content shown when the tab is selected.
 public struct TabPage {
     var image: String
     var view: AnyView
     
+    /// Cteates TabPage with a SF Symbol image and View.
+    /// - Parameters:
+    ///   - image: SF Symbol name for the image that will appear on the tab
+    ///   - view: Content to be shown when the tab is selected
     public init<V>(image: String, view: V) where V : View {
         self.image = image
         self.view = AnyView(view)
     }
 }
 
-struct TabRootView: View {
+/// Creates the root of a tabbed view.
+public struct TabRootView: View {
     @State var tag = 0
     var tabs: [TabPage]
     var theme: TabViewTheme
     
-    init(tabs: [TabPage]) {
-        self.tabs = tabs
-        self.theme = TabViewTheme(backgroundColor: Color.clear, highlightColor: .blue, defaultColor: .gray)
-    }
-    
-    init(tabs: [TabPage], theme: TabViewTheme) {
+    /// Creates a TabRootView with the provided TabPages and custom theme
+    /// - Parameters:
+    ///   - tabs: Tabs to include in the tabbed view
+    ///   - theme: Cusom theme for the tabbed view
+    public init(tabs: [TabPage], theme: TabViewTheme = TabViewTheme(backgroundColor: Color.clear, highlightColor: .blue, defaultColor: .gray)) {
         self.tabs = tabs
         self.theme = theme
     }
     
-    var body: some View {
+    public var body: some View {
         GeometryReader { geometry in
             ZStack {
                 self.theme.backgroundColor.edgesIgnoringSafeArea(.all)
@@ -62,18 +67,29 @@ struct TabRootView: View {
     }
 }
 
+/// Custom theme for TabRootView
 public class TabViewTheme {
     public var backgroundColor: Color
     public var highlightColor: Color
     public var defaultColor: Color
     
-    init(backgroundColor: Color, highlightColor: Color, defaultColor: Color) {
+    /// Custom theme for TabRootView with SwiftUI Color
+    /// - Parameters:
+    ///   - backgroundColor: Set the background of the bottom tab bar
+    ///   - highlightColor: Set the color for the highlight on the selected tab
+    ///   - defaultColor: Set the color for non-selected tabs
+    public init(backgroundColor: Color, highlightColor: Color, defaultColor: Color) {
         self.backgroundColor = backgroundColor
         self.highlightColor = highlightColor
         self.defaultColor = defaultColor
     }
     
-    init(backgroundColor: UIColor, highlightColor: UIColor, defaultColor: UIColor) {
+    /// Custom theme for TabRootView with  UIColor
+    /// - Parameters:
+    ///   - backgroundColor: Set the background of the bottom tab bar
+    ///   - highlightColor: Set the color for the highlight on the selected tab
+    ///   - defaultColor: Set the color for non-selected tabs
+    public init(backgroundColor: UIColor, highlightColor: UIColor, defaultColor: UIColor) {
         self.backgroundColor = Color(backgroundColor)
         self.highlightColor = Color(highlightColor)
         self.defaultColor = Color(defaultColor)
@@ -84,9 +100,9 @@ struct TabRootView_Previews: PreviewProvider {
     static var previews: some View {
         TabRootView(tabs: [
             TabPage(image: "timer", view: Text("one")),
-            TabPage(image: "lungs", view: Text("Two")),
-            TabPage(image: "lungs", view: Text("Two")),
-            TabPage(image: "lungs", view: Text("Two")),
+            TabPage(image: "timer", view: Text("Two")),
+            
+            
         ])
     }
 }
@@ -95,7 +111,7 @@ struct TabRootViewTheme_Previews: PreviewProvider {
     static var previews: some View {
         TabRootView(tabs: [
             TabPage(image: "timer", view: Text("one")),
-            TabPage(image: "lungs", view: Text("Two"))
+            TabPage(image: "timer", view: Text("Two"))
         ], theme: TabViewTheme(backgroundColor: .darkGray, highlightColor: .white, defaultColor: .gray))
     }
 }
