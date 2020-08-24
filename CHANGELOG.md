@@ -1,3 +1,10 @@
+## [0.7.3](https://github.com/LucasCarioca/QuickComponents/compare/v0.7.2...v0.7.3) (2020-08-24)
+
+
+### Bug Fixes
+
+* Add tab bar view ([f2c4310](https://github.com/LucasCarioca/QuickComponents/commit/f2c431011c844bb9d460d64175e64928717d02a5))
+
 ## [0.7.2](https://github.com/LucasCarioca/QuickComponents/compare/v0.7.1...v0.7.2) (2020-08-15)
 
 
